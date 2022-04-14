@@ -17,6 +17,10 @@ namespace Saving_Entered_Stings_into_Variables_And_Typing_them_In_Console
             public string townName, streetName;
             public int houseNumber;
             public string enteredText;
+            public string town = "Town";
+            public string street = "Street name";
+            public string housenumber = "HOUSE number";
+            public string establishdate = "an ESTABLISH date(Format:xxxx-xx-xx for YEAR-MONTH-DAY)";
             public DateTime establishDate;
 
 
@@ -31,18 +35,18 @@ namespace Saving_Entered_Stings_into_Variables_And_Typing_them_In_Console
                 Checker checker = new Checker();
                 StarInfoPlacer();
                 Console.WriteLine(">Press ENTER to continue...");
-                StringRecorder("a Town", townName);
-                StringRecorder("a Street name", streetName);
-                StringRecorder("a HOUSE number", Convert.ToString(houseNumber));
-                StringRecorder("an ESTABLISH date (Format:xxxx-xx-xx for YEAR-MONTH-DAY)", Convert.ToString(establishDate));
+                StringRecorder(town, townName);
+                StringRecorder(street, streetName);
+                StringRecorder(housenumber, Convert.ToString(houseNumber));
+                StringRecorder(establishdate, Convert.ToString(establishDate));
             }
             public void Printer()
             {
                 StarInfoPlacer();
-                Console.WriteLine($">Town Name is: <<{townName}>>.");
-                Console.WriteLine($">Street name is: <<{streetName}>>");
-                Console.WriteLine($">House number is: <<{houseNumber}>>");
-                Console.WriteLine($">Establish date is: <<{establishDate}>>");
+                Console.WriteLine($">{town} is: <<{townName}>>.");
+                Console.WriteLine($">{street} is: <<{streetName}>>");
+                Console.WriteLine($">{housenumber} is: <<{houseNumber}>>");
+                Console.WriteLine($">{establishdate} is: <<{establishDate}>>");
                 Console.ReadLine();
             }
 
