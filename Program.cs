@@ -20,8 +20,11 @@ namespace Saving_Entered_Stings_into_Variables_And_Typing_them_In_Console
             public string town = "Town";
             public string street = "Street name";
             public string housenumber = "HOUSE number";
-            public string establishdate = "an ESTABLISH date(Format:xxxx-xx-xx for YEAR-MONTH-DAY)";
+            public string establishdate = "an ESTABLISH date(Format: xx xx xxxx)";
+            public string buildstart = "a BUILD starting date(Format: xx xx xxxx)";
             public DateTime establishDate;
+            public DateTime buildStart;
+            
 
 
             public void StarInfoPlacer()
@@ -39,6 +42,7 @@ namespace Saving_Entered_Stings_into_Variables_And_Typing_them_In_Console
                 StringRecorder(street, streetName);
                 StringRecorder(housenumber, Convert.ToString(houseNumber));
                 StringRecorder(establishdate, Convert.ToString(establishDate));
+                StringRecorder(buildstart, Convert.ToString(buildStart));
             }
             public void Printer()
             {
@@ -47,6 +51,8 @@ namespace Saving_Entered_Stings_into_Variables_And_Typing_them_In_Console
                 Console.WriteLine($">{street} is: <<{streetName}>>");
                 Console.WriteLine($">{housenumber} is: <<{houseNumber}>>");
                 Console.WriteLine($">{establishdate} is: <<{establishDate}>>");
+                Console.WriteLine($">{buildstart} is: <<{buildStart}>>");
+                Console.WriteLine($">Age of the building is: <<{(buildStart.Subtract(establishDate).TotalDays)/365}>> years");
                 Console.ReadLine();
             }
 
@@ -62,7 +68,7 @@ namespace Saving_Entered_Stings_into_Variables_And_Typing_them_In_Console
                 {
                    streetName = checker.IfStringIsANumber(enteredText, name);
                 } 
-                else if (name == "a HOUSE number")
+                else if (name == housenumber)
                 {
                    houseNumber = Convert.ToInt32(checker.IfNumberIsAString(enteredText, name));
                 } 
@@ -70,7 +76,7 @@ namespace Saving_Entered_Stings_into_Variables_And_Typing_them_In_Console
                 {
                    establishDate = checker.IfEstablishDateIsInRightInterval(establishDate);
                 }               
-            }
+            } 
         }
 
         public class Checker
